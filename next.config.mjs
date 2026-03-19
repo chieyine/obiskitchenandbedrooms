@@ -22,7 +22,7 @@ const nextConfig = {
         has: [
           {
             type: 'host',
-            value: 'luxury-by-sam.netlify.app',
+            value: 'obiskitchenbedrooms.netlify.app',
           },
         ],
         destination: 'https://obiskitchenbedrooms.co.uk/:path*',
