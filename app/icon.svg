@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FDFCFB"/>
+      <stop offset="1" stop-color="#D1BFA4"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="88" fill="url(#g)"/>
+  <rect x="52" y="54" width="408" height="404" rx="64" fill="rgba(253,252,251,0.78)" stroke="rgba(51,49,46,0.18)" stroke-width="4"/>
+  <g fill="#33312E">
+    <text x="96" y="252" font-family="Georgia, 'Times New Roman', serif" font-size="54" letter-spacing="-1.2">
+      Obis
+    </text>
+    <text x="96" y="312" font-family="Georgia, 'Times New Roman', serif" font-size="40" opacity="0.88">
+      Kitchen &amp;
+    </text>
+    <text x="96" y="360" font-family="Georgia, 'Times New Roman', serif" font-size="40" opacity="0.88">
+      Bedrooms
+    </text>
+  </g>
+</svg>

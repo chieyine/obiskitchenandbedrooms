@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Note: Next.js on Netlify is typically handled by the Netlify Next runtime/plugin.
+# Keep redirects/headers in `public/_redirects` and `public/_headers`.
