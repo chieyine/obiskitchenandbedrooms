@@ -21,9 +21,6 @@ export const metadata = {
   title: "Obi's Kitchen & Bedrooms | Fitted Kitchens, Wardrobes & Bedrooms",
   description:
     "Obi's Kitchen & Bedrooms design and install fitted kitchens, wall media units, wardrobes and bedroom furniture across Hertfordshire and the UK. Free consultation and quote.",
-  alternates: {
-    canonical: "/",
-  },
   openGraph: {
     title: "Obi's Kitchen & Bedrooms | Fitted Kitchens, Wardrobes & Bedrooms",
     description:

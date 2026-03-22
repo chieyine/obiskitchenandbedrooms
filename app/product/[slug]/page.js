@@ -2,6 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getProductBySlug, getProducts } from "../../../lib/wordpress";
+import { absoluteUrl } from "../../../lib/site";
+import { buildProductQuoteContactHref } from "../../../lib/product-contact";
 import { Reveal } from "../../components/Animations";
 import SharedElementArrival from "../../components/SharedElementArrival";
 import ProductStorySequence from "../../components/ProductStorySequence";
@@ -17,7 +19,8 @@ export async function generateMetadata({ params }) {
     };
   }
 
-  const image = product.image || product.sequenceFrames?.[0] || undefined;
+  const rawImage = product.image || product.sequenceFrames?.[0] || undefined;
+  const image = rawImage ? absoluteUrl(rawImage) : undefined;
 
   const url = `https://obiskitchenbedrooms.co.uk/product/${product.slug}`;
 
@@ -59,7 +62,7 @@ export default async function ProductDetailPage({ params }) {
     "@type": "Product",
     name: product.title,
     description: product.description,
-    image: product.image ? [product.image] : undefined,
+    image: product.image ? [absoluteUrl(product.image)] : undefined,
     brand: {
       "@type": "Brand",
       name: "Obi's Kitchen & Bedrooms",
@@ -113,27 +116,47 @@ export default async function ProductDetailPage({ params }) {
             </Reveal>
 
             <Reveal width="100%" delay={0.2}>
-              <div className="brutal-panel py-5 px-5 space-y-3 text-[14px]">
-                <div className="flex justify-between">
-                  <span className="text-foreground/50">Price</span>
-                  <span className="text-accent">{product.price}</span>
+              <aside className="border border-foreground/12 bg-background/90 backdrop-blur-[2px] p-6 md:p-8">
+                <div className="pb-6 border-b border-foreground/10">
+                  <p className="text-[9px] uppercase tracking-[0.36em] text-foreground/40 mb-3">Guide price</p>
+                  <p className="text-[2rem] md:text-[2.35rem] font-serif leading-none text-foreground tracking-tight">
+                    {product.price}
+                  </p>
+                  <p className="mt-3 text-[12px] text-foreground/48 font-light leading-relaxed max-w-[280px]">
+                    Indicative from your enquiry—final price after free survey and agreed design.
+                  </p>
                 </div>
-                <div className="flex justify-between">
-                  <span className="text-foreground/50">Dimensions</span>
-                  <span>{product.dimensions}</span>
+
+                <dl className="mt-0 divide-y divide-foreground/8">
+                  <div className="grid grid-cols-1 gap-1 py-4 sm:grid-cols-[minmax(0,38%)_1fr] sm:gap-6 sm:items-baseline">
+                    <dt className="text-[9px] uppercase tracking-[0.28em] text-foreground/38">Dimensions</dt>
+                    <dd className="text-[13px] md:text-[14px] text-foreground/78 font-light leading-snug sm:text-right">
+                      {product.dimensions}
+                    </dd>
+                  </div>
+                  <div className="grid grid-cols-1 gap-1 py-4 sm:grid-cols-[minmax(0,38%)_1fr] sm:gap-6 sm:items-baseline">
+                    <dt className="text-[9px] uppercase tracking-[0.28em] text-foreground/38">Lead time</dt>
+                    <dd className="text-[13px] md:text-[14px] text-foreground/78 font-light leading-snug sm:text-right">
+                      {product.leadTime}
+                    </dd>
+                  </div>
+                </dl>
+
+                <div className="mt-7 space-y-3">
+                  <Link
+                    href={buildProductQuoteContactHref(product)}
+                    className="flex w-full items-center justify-center bg-foreground px-6 py-4 text-[10px] uppercase tracking-[0.28em] font-semibold text-background transition-colors hover:bg-foreground/88"
+                  >
+                    Request a quote
+                  </Link>
+                  <Link
+                    href="/start"
+                    className="flex w-full items-center justify-center border border-foreground/18 bg-transparent px-6 py-3.5 text-[10px] uppercase tracking-[0.26em] text-foreground/75 transition-colors hover:border-foreground/35 hover:text-foreground"
+                  >
+                    Quick questionnaire first
+                  </Link>
                 </div>
-                <div className="flex justify-between">
-                  <span className="text-foreground/50">Lead time</span>
-                  <span>{product.leadTime}</span>
-                </div>
-                
-                <Link
-                  href={`/contact?interest=${encodeURIComponent(product.title)}`}
-                  className="w-full mt-4 py-4 text-center border border-foreground/20 text-foreground bg-transparent text-[10px] uppercase tracking-[0.3em] font-sans hover:bg-accent/15 transition-colors flex justify-center items-center"
-                >
-                  Get a quote for this
-                </Link>
-              </div>
+              </aside>
             </Reveal>
 
             <Reveal width="100%" delay={0.25}>

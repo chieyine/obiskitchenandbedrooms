@@ -1,6 +1,11 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { getProducts } from '../lib/wordpress';
+
+/** Homepage only — root layout must not set a global canonical (would hurt other routes). */
+export const metadata = {
+  alternates: { canonical: '/' },
+};
 import ProductCard from './components/ProductCard';
 import { Reveal } from './components/Animations';
 import MagneticButton from './components/MagneticButton';
@@ -9,22 +14,65 @@ import StickySceneFlow from './components/StickySceneFlow';
 import Testimonials from './components/Testimonials';
 import BeforeAfterSlider from './components/BeforeAfterSlider';
 import HomeHeroSlider from './components/HomeHeroSlider';
+import { brand } from '@/lib/brand-images';
 
+/** Homepage featured grid: lead with kitchen, wardrobe & media wall offers */
+const FEATURED_HOME_ORDER = [
+  'shaker-kitchen-cabinets',
+  'sliding-door-wardrobe',
+  'tv-media-wall-unit',
+  'handleless-modern-kitchen',
+];
+
+function orderFeaturedProducts(products) {
+  const bySlug = new Map(products.map((p) => [p.slug, p]));
+  const ordered = FEATURED_HOME_ORDER.map((slug) => bySlug.get(slug)).filter(Boolean);
+  const rest = products.filter((p) => !FEATURED_HOME_ORDER.includes(p.slug));
+  return [...ordered, ...rest].slice(0, 4);
+}
+
+const SERVICE_PILLARS = [
+  {
+    title: 'Kitchen cabinets',
+    blurb: 'Fitted units, islands & storage',
+    href: '/product/shaker-kitchen-cabinets',
+    image: brand.kitchen,
+    alt: 'Modern fitted kitchen with cabinetry and island',
+  },
+  {
+    title: 'Wardrobes',
+    blurb: 'Sliding, hinged & walk-in designs',
+    href: '/product/sliding-door-wardrobe',
+    image: brand.wardrobe,
+    alt: 'Floor-to-ceiling fitted wardrobe doors',
+  },
+  {
+    title: 'Media walls',
+    blurb: 'TV walls with storage & cable-free look',
+    href: '/product/tv-media-wall-unit',
+    image: brand.media,
+    alt: 'Living room with wall-mounted TV and media storage',
+  },
+];
 
 export default async function Home() {
   const products = await getProducts();
-  const featuredProducts = products.slice(0, 4);
-  const heroProducts = products.slice(0, 2);
-  const craftVisuals = products.slice(0, 3);
+  const featuredProducts = orderFeaturedProducts(products);
 
   return (
     <main className="min-h-screen relative bg-background">
       <div className="grain-overlay" />
       <GlobalNav theme="transparent" />
 
-      {/* Full-screen hero slider */}
-      <section className="relative min-h-screen pt-20 md:pt-24" data-cursor-label="Hero" data-cursor-tone="default">
-        <HomeHeroSlider className="w-full h-full" />
+      {/* Full-viewport hero slider (fills area below fixed nav) */}
+      <section
+        className="relative flex min-h-[100svh] flex-col pt-20 md:pt-24"
+        data-cursor-label="Hero"
+        data-cursor-tone="default"
+      >
+        <div className="relative min-h-0 flex-1 w-full">
+          <HomeHeroSlider className="absolute inset-0 h-full min-h-[420px] w-full" />
+        </div>
       </section>
 
       {/* Text + featured products hero band */}
@@ -92,28 +140,26 @@ export default async function Home() {
             </Reveal>
           </div>
 
-          <div className="space-y-4">
-            {heroProducts.map((item, index) => (
-              <Reveal key={item.id} delay={0.3 + index * 0.12}>
-                <article className="brutal-panel p-3">
+          <div className="flex flex-col gap-4 md:gap-5">
+            {SERVICE_PILLARS.map((pillar, index) => (
+              <Reveal key={pillar.href} delay={0.3 + index * 0.1}>
+                <Link href={pillar.href} className="group block brutal-panel p-3 hover:border-foreground/25 transition-colors">
                   <div className="aspect-4/3 relative overflow-hidden">
-                    {item.image && (
-                      <Image
-                        src={item.image}
-                        alt={`${item.title} hero`}
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                        priority={index === 0}
-                      />
-                    )}
-                    <div className="absolute inset-0 bg-linear-to-t from-foreground/40 via-transparent to-transparent" />
-                    <div className="absolute bottom-3 left-3 right-3 text-[10px] uppercase tracking-[0.3em] text-white/95 flex justify-between">
-                      <span>{item.category}</span>
-                      <span>{item.price}</span>
+                    <Image
+                      src={pillar.image}
+                      alt={pillar.alt}
+                      fill
+                      className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]"
+                      sizes="(max-width: 768px) 100vw, 36vw"
+                      priority={index === 0}
+                    />
+                    <div className="absolute inset-0 bg-linear-to-t from-foreground/55 via-foreground/10 to-transparent" />
+                    <div className="absolute bottom-3 left-3 right-3 text-[10px] uppercase tracking-[0.28em] text-white/95 space-y-1">
+                      <span className="block font-semibold tracking-[0.2em]">{pillar.title}</span>
+                      <span className="block text-[9px] normal-case tracking-normal text-white/75 font-light leading-snug">{pillar.blurb}</span>
                     </div>
                   </div>
-                </article>
+                </Link>
               </Reveal>
             ))}
           </div>
@@ -128,10 +174,10 @@ export default async function Home() {
             <div className="mb-24 md:mb-40 flex flex-col md:flex-row md:items-end md:justify-between gap-8 md:gap-12">
               <div className="space-y-4">
                 <span className="label-upper text-foreground/75">Featured Work</span>
-                <h2 className="text-[3rem] md:text-[6rem] font-serif max-w-3xl brutal-title opacity-95">Kitchens, Bedrooms & Storage</h2>
+                <h2 className="text-[3rem] md:text-[6rem] font-serif max-w-3xl brutal-title opacity-95">Kitchens, Wardrobes & Media Walls</h2>
               </div>
               <p className="max-w-md text-[15px] md:text-[17px] text-foreground/65 leading-[1.7] font-light">
-                A few popular builds to give you ideas—wardrobes that fit perfectly, kitchen units that work hard, and storage that makes the room feel bigger.
+                Real builds across kitchens, wardrobes and media walls—fitted to your space with clean installation and practical storage.
               </p>
             </div>
           </Reveal>

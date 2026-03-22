@@ -3,6 +3,7 @@ import GlobalNav from "../components/GlobalNav";
 export const metadata = {
   title: "Privacy Policy | Obi's Kitchen & Bedrooms",
   description: "Learn how Obi's Kitchen & Bedrooms collects, uses, and protects your personal information.",
+  alternates: { canonical: "/privacy" },
 };
 
 export default function PrivacyPolicy() {

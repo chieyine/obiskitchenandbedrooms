@@ -5,6 +5,7 @@ import GlobalNav from "../components/GlobalNav";
 export const metadata = {
   title: "Advice | Obi's Kitchen & Bedrooms",
   description: "Helpful guides for fitted wardrobes, bedrooms, kitchens, media walls and storage—before you build.",
+  alternates: { canonical: "/advice" },
 };
 
 export default async function AdvicePage() {

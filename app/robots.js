@@ -5,7 +5,7 @@ export default function robots() {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/checkout"],
+      disallow: [],
     },
     sitemap: `${baseUrl}/sitemap.xml`,
     host: "obiskitchenbedrooms.co.uk",

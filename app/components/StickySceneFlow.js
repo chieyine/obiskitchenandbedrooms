@@ -4,30 +4,31 @@ import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { useRef, useState } from "react";
 import Image from "next/image";
 
+/** Process journey (how you work)—kept separate from homepage hero product shots in `/images/hero-stock/` */
 const scenes = [
   {
     title: "Free Consultation",
     copy: "We visit your home (across the UK) to understand your space, storage needs and budget.",
-    image:
-      "/images/photo-1484101403633-562f891dc89a.jpg",
+    image: "/images/process-scenes/consultation.jpg",
+    imageAlt: "Design consultation with clients reviewing options in a bright studio space",
   },
   {
     title: "Design & Quote",
     copy: "You get a practical design and a clear, competitive quote—no confusion, no hidden extras.",
-    image:
-      "/images/photo-1618220179428-22790b461013.jpg",
+    image: "/images/process-scenes/design-blueprint.jpg",
+    imageAlt: "Architectural plans and blueprints laid out for a home project",
   },
   {
     title: "Build & Install",
-    copy: "Your wardrobes, cabinets or media wall are built with care and installed cleanly and professionally.",
-    image:
-      "/images/photo-1555041469-a586c61ea9bc.jpg",
+    copy: "Your kitchen cabinets, wardrobes or media wall are built with care and installed cleanly and professionally.",
+    image: "/images/process-scenes/build-install.jpg",
+    imageAlt: "Installation work in progress with tools and flooring fitting",
   },
   {
     title: "Final Check",
     copy: "We check alignment, doors and drawers, finishes and fittings—then we only leave when it’s right.",
-    image:
-      "/images/photo-1615874959474-d609969a20ed.jpg",
+    image: "/images/process-scenes/final-finish.jpg",
+    imageAlt: "Finished contemporary kitchen with clean cabinetry and surfaces",
   },
 ];
 
@@ -63,10 +64,11 @@ export default function StickySceneFlow() {
               >
                 <Image
                   src={scene.image}
-                  alt={scene.title}
+                  alt={scene.imageAlt}
                   fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 0vw, 50vw"
+                  className="object-cover object-center"
+                  sizes="(max-width: 768px) 0vw, 45vw"
+                  quality={88}
                   priority={index === 0}
                 />
               </motion.div>
@@ -88,10 +90,11 @@ export default function StickySceneFlow() {
               <div className="md:hidden h-[42vh] border border-foreground/14 relative overflow-hidden">
                 <Image
                   src={scene.image}
-                  alt={scene.title}
+                  alt={scene.imageAlt}
                   fill
-                  className="object-cover"
+                  className="object-cover object-center"
                   sizes="100vw"
+                  quality={88}
                 />
               </div>
             </article>

@@ -6,6 +6,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Reveal, SmoothScroll } from "./Animations";
 import Image from "next/image";
 import { Search } from "lucide-react";
+import { adviceImageForCategory } from "@/lib/brand-images";
 
 export default function JournalExperience({ posts }) {
   const container = useRef(null);
@@ -108,6 +109,7 @@ export default function JournalExperience({ posts }) {
 
             <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
             {filteredPosts.map((post, i) => {
+              const coverImage = post.image || adviceImageForCategory(post.category);
               // Creating an asymmetric grid pattern
               const isLarge = i % 4 === 0 || i % 4 === 3;
               const gridClass = isLarge 
@@ -119,15 +121,14 @@ export default function JournalExperience({ posts }) {
                   <Link href={`/advice/${post.slug}`} className="block">
                     <Reveal delay={0.1}>
                       <div className={`relative overflow-hidden ${isLarge ? 'aspect-video' : 'aspect-4/5'}`}>
-                        {post.image && (
-                          <Image
-                            src={post.image}
-                            alt={post.title || "Journal article image"}
-                            fill
-                            className="object-cover transition-transform duration-[1.5s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
-                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 66vw"
-                          />
-                        )}
+                        <Image
+                          src={coverImage}
+                          alt={post.title || "Journal article image"}
+                          fill
+                          className="object-cover transition-transform duration-[1.5s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 66vw"
+                          quality={90}
+                        />
                         <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-700 pointer-events-none" />
                         
                         <div className="absolute top-4 left-4 right-4 flex justify-between text-[10px] uppercase tracking-[0.2em] text-white/90 drop-shadow-md pointer-events-none">

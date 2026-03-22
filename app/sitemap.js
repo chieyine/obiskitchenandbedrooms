@@ -3,9 +3,10 @@ import { getProducts, getPosts } from "../lib/wordpress";
 const baseUrl = "https://obiskitchenbedrooms.co.uk";
 
 export default async function sitemap() {
+  const staticNow = new Date();
   const staticRoutes = ["", "/shop", "/advice", "/process", "/contact", "/privacy", "/terms", "/start"].map((path) => ({
     url: `${baseUrl}${path}`,
-    lastModified: new Date("2026-03-01"),
+    lastModified: staticNow,
   }));
 
   const [products, posts] = await Promise.all([getProducts(), getPosts()]);

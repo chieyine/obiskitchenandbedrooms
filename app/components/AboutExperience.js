@@ -27,12 +27,13 @@ export default function AboutExperience() {
             className="absolute inset-0 origin-center opacity-70"
           >
             <Image
-              src="/images/photo-1618220179428-22790b461013.jpg"
-              alt="Obi's Kitchen & Bedrooms fitted furniture"
+              src="/images/hero-stock/kitchen.jpg"
+              alt="Fitted kitchen with custom cabinets and island"
               fill
-              className="object-cover"
+              className="object-cover object-center"
               priority
               sizes="100vw"
+              quality={90}
             />
           </motion.div>
           <div className="absolute inset-0 bg-black/30" />
@@ -86,11 +87,12 @@ export default function AboutExperience() {
               <Reveal width="100%" height="100%">
                 <div className="w-full h-full relative">
                   <Image
-                    src="/images/photo-1493666438817-866a91353ca9.jpg"
-                    alt="Material Honesty"
+                    src="/images/hero-stock/wardrobe.jpg"
+                    alt="Made-to-measure fitted wardrobe doors and panels"
                     fill
-                    className="object-cover"
+                    className="object-cover object-center"
                     sizes="(max-width: 768px) 100vw, 66vw"
+                    quality={88}
                   />
                 </div>
               </Reveal>
@@ -100,18 +102,19 @@ export default function AboutExperience() {
                  <Reveal width="100%" height="100%">
                   <div className="w-full h-full relative">
                     <Image
-                      src="/images/photo-1484101403633-562f891dc89a.jpg"
-                      alt="Joinery Detail"
+                      src="/images/hero-stock/media-wall.jpg"
+                      alt="Media wall with TV and built-in storage"
                       fill
-                      className="object-cover"
+                      className="object-cover object-center"
                       sizes="(max-width: 768px) 50vw, 33vw"
+                      quality={88}
                     />
                   </div>
                 </Reveal>
               </div>
               <Reveal delay={0.2}>
                 <p className="text-[11px] uppercase tracking-[0.3em] text-foreground/50 font-medium">
-                  Material Honesty / 01
+                  Kitchens · Wardrobes · Media walls
                 </p>
               </Reveal>
             </div>

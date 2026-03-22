@@ -14,7 +14,7 @@ const faqs = [
   {
     question: "Which areas do you cover?",
     answer:
-      "We are based in Hertfordshire and regularly work across the surrounding areas and wider UK. Tell us where you are and we'll confirm availability.",
+      "We are based in Hertfordshire and regularly work in London, St Albans, Hemel Hempstead, Watford and surrounding areas—and we can travel further across the UK for larger jobs. Tell us your postcode and we'll confirm availability.",
   },
   {
     question: "What does a typical project cost?",
@@ -30,11 +30,6 @@ const faqs = [
     question: "Can you remove old wardrobes or cabinets?",
     answer:
       "Yes. We can remove and dispose of old units as part of the project. We'll include this clearly in your quote so there are no surprises.",
-  },
-  {
-    question: "Do you work in my area?",
-    answer:
-      "We regularly work in Hertfordshire, London, St Albans, Hemel Hempstead, Watford, and surrounding areas. We can also travel further across the UK for larger jobs.",
   },
   {
     question: "Can I see examples of your previous work?",

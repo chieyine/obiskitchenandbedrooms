@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Reveal, SmoothScroll } from "./Animations";
 import { useRef } from "react";
 import Link from "next/link";
+import { adviceImageForCategory } from "@/lib/brand-images";
 
 export default function SinglePostExperience({ post }) {
   const container = useRef(null);
@@ -31,7 +32,7 @@ export default function SinglePostExperience({ post }) {
           <motion.div
             style={{ 
               scale: heroScale,
-              backgroundImage: `url(${post.image || ""})`
+              backgroundImage: `url(${heroImage})`
             }}
             className="absolute inset-0 bg-cover bg-center origin-center"
           />

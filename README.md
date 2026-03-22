@@ -24,6 +24,11 @@ npm start
 - Copy `.env.example` → `.env.local`
 - **Never commit** `.env.local` (it contains secrets)
 
+## Site map / page audit
+
+- See [`docs/PAGE_AUDIT.md`](docs/PAGE_AUDIT.md) for route inventory and image pipeline notes.
+- See [`docs/DEEP_AUDIT.md`](docs/DEEP_AUDIT.md) for SEO, security, a11y, content, and pre-launch recommendations.
+
 ## Content sources
 
 - **WooCommerce products**: fetched server-side from `WORDPRESS_URL` + `WC_CONSUMER_KEY` + `WC_CONSUMER_SECRET`
@@ -31,9 +36,18 @@ npm start
 
 If env vars aren’t present, the site falls back to built-in mock content (`lib/wordpress.js`).
 
+**Product images:** When WooCommerce returns images for a product, those URLs are used everywhere (cards, PDP, story sequence). Local defaults in `lib/wordpress.js` (`productVisuals`) apply only if the API returns **no** images for that product, or when the API is unavailable.
+
+**WordPress + WooCommerce setup (headless):** see [`docs/WORDPRESS_WOOCOMMERCE_SETUP.md`](docs/WORDPRESS_WOOCOMMERCE_SETUP.md).
+
+**Client handover (how they run WordPress day to day):** [`docs/CLIENT_CONTENT_GUIDE.md`](docs/CLIENT_CONTENT_GUIDE.md).
+
 ## Notes
 
 - `/contact` uses a Netlify-style form post; `public/__forms.html` is included for the build target that expects it.
+- **Homepage hero** (`HomeHeroSlider`) uses local stock JPEGs in `public/images/hero-stock/` (Unsplash-sourced; see `public/images/hero-stock/CREDITS.md`).
+- **Before/after “kitchen before”** sample: `public/images/home-pairs/` (see `public/images/home-pairs/CREDITS.md`).
+- **Process journey** (homepage “How it works” sticky column): `public/images/process-scenes/` — distinct from hero marketing shots (`hero-stock/`); see `public/images/process-scenes/CREDITS.md`.
  
 ## Netlify
 

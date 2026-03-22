@@ -7,14 +7,19 @@ import { Reveal } from "./Animations";
 
 const slides = [
   {
-    before: "/images/photo-1484101403633-562f891dc89a.jpg",
-    after: "/images/photo-1616486029423-aaa4789e8c9a.jpg",
-    label: "Bedroom Wardrobe Transformation",
+    before: "/images/home-pairs/kitchen-before.jpg",
+    after: "/images/hero-stock/kitchen.jpg",
+    label: "Kitchen cabinets",
   },
   {
-    before: "/images/photo-1493666438817-866a91353ca9.jpg",
-    after: "/images/photo-1615874959474-d609969a20ed.jpg",
-    label: "Kitchen Cabinet Upgrade",
+    before: "/images/photo-1616486029423-aaa4789e8c9a.jpg",
+    after: "/images/hero-stock/wardrobe.jpg",
+    label: "Wardrobes",
+  },
+  {
+    before: "/images/photo-1484101403633-562f891dc89a.jpg",
+    after: "/images/hero-stock/media-wall.jpg",
+    label: "Media wall",
   },
 ];
 
@@ -62,12 +67,13 @@ export default function BeforeAfterSlider() {
               <p className="label-upper text-foreground/45 mb-3">Transformations</p>
               <h2 className="text-3xl md:text-6xl font-serif brutal-title">Before & After</h2>
             </div>
-            <div className="flex gap-3">
+            <div className="flex flex-wrap gap-2 md:gap-3">
               {slides.map((s, i) => (
                 <button
-                  key={i}
+                  key={s.label}
+                  type="button"
                   onClick={() => { setActiveSlide(i); setSliderPos(50); }}
-                  className={`text-[10px] uppercase tracking-[0.25em] px-4 py-2 border transition-colors duration-300 ${
+                  className={`text-[10px] uppercase tracking-[0.25em] px-3 py-2 md:px-4 border transition-colors duration-300 ${
                     i === activeSlide
                       ? "border-foreground text-foreground"
                       : "border-foreground/20 text-foreground/50 hover:border-foreground/40"
@@ -95,8 +101,9 @@ export default function BeforeAfterSlider() {
                 src={slide.after}
                 alt={`${slide.label} — after`}
                 fill
-                className="object-cover"
+                className="object-cover object-center"
                 sizes="100vw"
+                quality={88}
               />
               <div className="absolute bottom-4 right-4 md:bottom-6 md:right-6 text-[10px] uppercase tracking-[0.3em] text-white/80 bg-black/50 backdrop-blur-sm px-3 py-1.5">
                 After
@@ -113,8 +120,9 @@ export default function BeforeAfterSlider() {
                   src={slide.before}
                   alt={`${slide.label} — before`}
                   fill
-                  className="object-cover"
+                  className="object-cover object-center"
                   sizes="100vw"
+                  quality={88}
                 />
               </div>
               <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6 text-[10px] uppercase tracking-[0.3em] text-white/80 bg-black/50 backdrop-blur-sm px-3 py-1.5">

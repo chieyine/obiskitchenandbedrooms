@@ -1,12 +1,20 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
+import Link from "next/link";
 import { Reveal, SmoothScroll } from "./Animations";
 
-export default function ContactExperience() {
+const SUBJECT_OPTIONS = ["general", "kitchen", "wardrobe", "storage"];
+
+export default function ContactExperience({
+  quoteProductSlug = "",
+  quoteProductTitle = "",
+  quoteSubject = "",
+}) {
   const container = useRef(null);
-  
+  const quotePrefillApplied = useRef(false);
+
   const { scrollYProgress } = useScroll({
     target: container,
     offset: ["start start", "end end"]
@@ -18,6 +26,36 @@ export default function ContactExperience() {
     subject: "general",
     message: "",
   });
+
+  useEffect(() => {
+    if (quotePrefillApplied.current) return;
+    const title = quoteProductTitle?.trim();
+    const slug = quoteProductSlug?.trim();
+    if (!title && !slug) return;
+
+    quotePrefillApplied.current = true;
+
+    const productUrl = slug ? `https://obiskitchenbedrooms.co.uk/product/${encodeURIComponent(slug)}` : "";
+    const lines = [];
+    if (title) lines.push(`I'd like a quote for: ${title}`);
+    if (productUrl) lines.push(`Product page: ${productUrl}`);
+    lines.push("");
+    lines.push("Please could you include:");
+    lines.push("• Rough room size or measurements (if known)");
+    lines.push("• Preferred style / finish");
+    lines.push("• Approximate budget range");
+    lines.push("");
+    lines.push("Thank you.");
+
+    const nextSubject =
+      quoteSubject && SUBJECT_OPTIONS.includes(quoteSubject) ? quoteSubject : undefined;
+
+    setFormState((prev) => ({
+      ...prev,
+      subject: nextSubject || prev.subject,
+      message: prev.message.trim() ? prev.message : lines.join("\n"),
+    }));
+  }, [quoteProductSlug, quoteProductTitle, quoteSubject]);
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -100,6 +138,25 @@ export default function ContactExperience() {
 
             <div className="md:pt-4">
               <Reveal delay={0.5}>
+                {(quoteProductTitle || quoteProductSlug) && !isSubmitted ? (
+                  <div className="mb-8 border border-foreground/12 bg-secondary/40 px-5 py-4 md:px-6 md:py-5">
+                    <p className="text-[9px] uppercase tracking-[0.32em] text-foreground/45 mb-2">Quote request</p>
+                    <p className="font-serif text-lg md:text-xl text-foreground/90 leading-snug">
+                      {quoteProductTitle || "This product"}
+                    </p>
+                    {quoteProductSlug ? (
+                      <Link
+                        href={`/product/${quoteProductSlug}`}
+                        className="inline-block mt-3 text-[10px] uppercase tracking-[0.22em] text-foreground/50 hover:text-accent transition-colors border-b border-foreground/15 hover:border-accent pb-0.5"
+                      >
+                        View product page
+                      </Link>
+                    ) : null}
+                    <p className="mt-4 text-[12px] text-foreground/50 font-light leading-relaxed">
+                      We&apos;ve started your message below—you can edit anything before sending.
+                    </p>
+                  </div>
+                ) : null}
                 {isSubmitted ? (
                   <motion.div 
                     initial={{ opacity: 0, y: 20 }}

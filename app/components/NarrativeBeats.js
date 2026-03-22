@@ -2,28 +2,30 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { brand } from "@/lib/brand-images";
 
+/** Service tiles: imagery matches each heading (same stock set as homepage hero pillars). */
 const beats = [
   {
     id: "01",
     title: "Fitted Bedrooms & Wardrobes",
     copy: "Made-to-measure wardrobes that maximise space—sliding, hinged, mirrored or walk-in, with custom shelving, drawers and rails.",
-    image:
-      "/images/photo-1616486029423-aaa4789e8c9a.jpg",
+    image: brand.wardrobe,
+    imageAlt: "Floor-to-ceiling fitted wardrobe doors in a neutral finish",
   },
   {
     id: "02",
     title: "Kitchen Cabinets & Fitted Kitchens",
     copy: "Durable, practical units with modern or classic finishes—base and wall units, pantries, soft-close drawers and worktops.",
-    image:
-      "/images/photo-1618220179428-22790b461013.jpg",
+    image: brand.kitchen,
+    imageAlt: "Modern fitted kitchen with cabinetry, island and appliances",
   },
   {
     id: "03",
-    title: "Custom Storage Solutions",
+    title: "Media Walls & Bespoke Storage",
     copy: "Media walls, under-stairs storage, home office cabinets, bathroom units and floating shelves—if you can imagine it, we can build it.",
-    image:
-      "/images/photo-1555041469-a586c61ea9bc.jpg",
+    image: brand.media,
+    imageAlt: "Living room with wall-mounted TV and built-in media storage",
   },
 ];
 
@@ -57,10 +59,11 @@ export default function NarrativeBeats() {
               >
                 <Image
                   src={beat.image}
-                  alt={beat.title}
+                  alt={beat.imageAlt}
                   fill
-                  className="object-cover"
+                  className="object-cover object-center"
                   sizes="(max-width: 768px) 100vw, 60vw"
+                  quality={88}
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-foreground/30 via-transparent to-transparent pointer-events-none" />
               </motion.div>

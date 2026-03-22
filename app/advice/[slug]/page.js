@@ -1,4 +1,5 @@
 import { getPosts, getPostBySlug } from "../../../lib/wordpress";
+import { absoluteUrl } from "../../../lib/site";
 import { notFound } from "next/navigation";
 import SinglePostExperience from "../../components/SinglePostExperience";
 import GlobalNav from "../../components/GlobalNav";
@@ -15,7 +16,7 @@ export async function generateMetadata({ params }) {
   const post = await getPostBySlug(slug);
   if (!post) return { title: "Post Not Found" };
 
-  const image = post.image || undefined;
+  const image = post.image ? absoluteUrl(post.image) : undefined;
   const url = `https://obiskitchenbedrooms.co.uk/advice/${post.slug}`;
 
   return {
@@ -51,7 +52,7 @@ export default async function SingleAdvicePage({ params }) {
     },
     headline: post.title,
     description: post.excerpt,
-    image: post.image ? [post.image] : undefined,
+    image: post.image ? [absoluteUrl(post.image)] : undefined,
     datePublished: post.date,
     author: {
       "@type": "Organization",

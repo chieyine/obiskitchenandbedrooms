@@ -3,6 +3,7 @@ import GlobalNav from "../components/GlobalNav";
 export const metadata = {
   title: "Terms of Service | Obi's Kitchen & Bedrooms",
   description: "Terms and conditions of service for Obi's Kitchen & Bedrooms bespoke fitted furniture projects.",
+  alternates: { canonical: "/terms" },
 };
 
 export default function TermsOfService() {

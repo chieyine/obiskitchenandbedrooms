@@ -17,36 +17,36 @@ export default function HomeHeroSlider({ className = "" }) {
   const slides = useMemo(
     () => [
       {
-        eyebrow: "Fitted kitchens",
-        title: "Clean lines. Smart storage. Built to fit.",
-        copy: "Modern or classic styles, measured properly and installed cleanly—without making the room feel heavy.",
+        eyebrow: "Kitchen cabinets",
+        title: "Fitted cabinetry, measured and installed properly.",
+        copy: "Handleless or classic styles, smart storage and clean lines—kitchen cabinets designed around how you cook and move.",
         ctaLabel: "Explore kitchens",
         ctaHref: "/shop",
         image: {
-          src: "/images/photo-1505693416388-ac5ce068fe85.jpg",
-          alt: "Bright modern fitted kitchen with clean cabinetry",
+          src: "/images/hero-stock/kitchen.jpg",
+          alt: "Modern fitted kitchen with white cabinets, island and integrated appliances",
         },
       },
       {
-        eyebrow: "Wardrobes & bedrooms",
-        title: "Made-to-measure wardrobes that feel effortless.",
-        copy: "No awkward gaps. No wasted corners. Just storage that works every day—and looks right.",
+        eyebrow: "Wardrobes",
+        title: "Floor-to-ceiling wardrobes, built to your space.",
+        copy: "Sliding or hinged doors, internals that suit your routine—no dead corners, no awkward gaps.",
         ctaLabel: "See wardrobe ideas",
         ctaHref: "/shop",
         image: {
-          src: "/images/photo-1616486029423-aaa4789e8c9a.jpg",
-          alt: "Warm bedroom interior with built-in storage feel",
+          src: "/images/hero-stock/wardrobe.jpg",
+          alt: "Row of floor-to-ceiling fitted wardrobe doors in a light neutral finish",
         },
       },
       {
-        eyebrow: "Media walls & storage",
-        title: "Hide cables. Add storage. Upgrade the whole room.",
-        copy: "A media wall that keeps things tidy, with finishes and proportions that suit your space.",
+        eyebrow: "Media walls",
+        title: "TV on the wall. Storage built in. Cables hidden.",
+        copy: "A clean media wall with the screen, soundbar and storage working together—finished to look intentional, not cluttered.",
         ctaLabel: "View media wall options",
         ctaHref: "/shop",
         image: {
-          src: "/images/photo-1484101403633-562f891dc89a.jpg",
-          alt: "Living space styled like a modern media wall area",
+          src: "/images/hero-stock/media-wall.jpg",
+          alt: "Living room with wall-mounted TV, floating shelf and soundbar on a light wood media wall",
         },
       },
     ],
@@ -85,7 +85,7 @@ export default function HomeHeroSlider({ className = "" }) {
 
   return (
     <section
-      className={`relative overflow-hidden bg-secondary/35 ${className}`}
+      className={`relative h-full min-h-full overflow-hidden bg-secondary/35 ${className}`}
       aria-roledescription="carousel"
       aria-label="Featured services"
       onKeyDown={onKeyDown}
@@ -95,7 +95,7 @@ export default function HomeHeroSlider({ className = "" }) {
       onFocus={() => setIsPaused(true)}
       onBlur={() => setIsPaused(false)}
     >
-      <div className="relative w-full h-full min-h-[420px]">
+      <div className="relative h-full min-h-[420px] w-full">
         <AnimatePresence initial={false} mode="wait">
           <motion.div
             key={current.image.src}
@@ -110,8 +110,9 @@ export default function HomeHeroSlider({ className = "" }) {
               alt={current.image.alt}
               fill
               priority
-              sizes="(max-width: 768px) 100vw, 40vw"
-              className="object-cover"
+              quality={92}
+              sizes="100vw"
+              className="object-cover object-center"
             />
             <div className="absolute inset-0 bg-black/15" />
           </motion.div>
