@@ -66,7 +66,7 @@ export default async function Home() {
 
       {/* Full-viewport hero slider (fills area below fixed nav) */}
       <section
-        className="relative flex min-h-[100svh] flex-col pt-20 md:pt-24"
+        className="relative flex min-h-[70svh] lg:min-h-[100svh] flex-col pt-20 md:pt-24"
         data-cursor-label="Hero"
         data-cursor-tone="default"
       >
@@ -76,7 +76,7 @@ export default async function Home() {
       </section>
 
       {/* Text + featured products hero band */}
-      <section className="px-6 md:px-20 pt-12 md:pt-24 pb-16 md:pb-32 flex items-end relative" data-cursor-label="Intro" data-cursor-tone="default">
+      <section className="px-6 md:px-20 pt-8 md:pt-10 lg:pt-24 pb-10 lg:pb-32 flex items-end relative" data-cursor-label="Intro" data-cursor-tone="default">
         <div className="max-w-[1400px] w-full mx-auto grid md:grid-cols-[1.4fr_0.6fr] gap-12 md:gap-20 items-end">
           <div>
             <Reveal delay={0.1}>
