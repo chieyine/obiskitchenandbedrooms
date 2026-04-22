@@ -140,7 +140,7 @@ export default async function Home() {
             </Reveal>
           </div>
 
-          <div className="flex flex-col gap-4 md:gap-5">
+          <div className="hidden lg:flex flex-col gap-4 md:gap-5">
             {SERVICE_PILLARS.map((pillar, index) => (
               <Reveal key={pillar.href} delay={0.3 + index * 0.1}>
                 <Link href={pillar.href} className="group block brutal-panel p-3 hover:border-foreground/25 transition-colors">
@@ -168,7 +168,7 @@ export default async function Home() {
 
       <StickySceneFlow />
 
-      <section id="collection" className="py-16 md:py-48 px-6 md:px-20" data-cursor-label="Collect" data-cursor-tone="accent">
+      <section id="collection" className="py-4 lg:py-48 px-6 md:px-20" data-cursor-label="Collect" data-cursor-tone="accent">
         <div className="max-w-[1400px] mx-auto">
           <Reveal>
             <div className="mb-12 md:mb-40 flex flex-col md:flex-row md:items-end md:justify-between gap-8 md:gap-12">
@@ -213,32 +213,34 @@ export default async function Home() {
 
       <Testimonials />
 
-      <section className="px-6 md:px-20 py-16 md:py-56" data-cursor-label="Read" data-cursor-tone="default">
+      <section className="px-6 md:px-20 py-4 lg:py-56" data-cursor-label="Read" data-cursor-tone="default">
         <div className="max-w-[1400px] mx-auto">
           <div className="mb-14 md:mb-20">
             <p className="label-upper text-foreground/45 mb-3">Why people choose us</p>
             <h2 className="text-3xl md:text-5xl font-serif brutal-title max-w-3xl">Simple process. Clean finish. Solid value.</h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-12 md:gap-20">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-20">
           {[
             { index: "01", title: "Skilled local craftsmen", copy: "Careful measuring, clean joins, solid fittings—done properly and built to last." },
             { index: "02", title: "Mid-range prices, high standards", copy: "We focus on value: a great finish without the premium price tag." },
             { index: "03", title: "From design to installation", copy: "Straight answers, clear quotes, tidy work and a final check before we leave." },
-          ].map((item) => (
-            <Reveal key={item.index} width="100%">
-              <article className="brutal-panel p-10 md:p-14 hover:border-foreground/20 transition-all duration-[1.2s] ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-2">
-                <p className="text-[10px] uppercase tracking-[0.4em] text-foreground/60 mb-10">{item.index}</p>
-                <h3 className="text-[2rem] leading-[1.1] font-serif mb-6 opacity-90">{item.title}</h3>
-                <p className="text-foreground/65 leading-[1.7] text-[15px] font-light">{item.copy}</p>
-              </article>
-            </Reveal>
+          ].map((item, idx) => (
+            <div key={item.index} className={idx === 2 ? "sm:col-span-2 lg:col-span-1" : ""}>
+              <Reveal width="100%">
+                <article className={`brutal-panel p-10 md:p-14 hover:border-foreground/20 transition-all duration-[1.2s] ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-2 h-full ${idx === 2 ? "sm:max-w-[66%] sm:mx-auto lg:max-w-none lg:mx-0" : ""}`}>
+                  <p className="text-[10px] uppercase tracking-[0.4em] text-foreground/60 mb-10">{item.index}</p>
+                  <h3 className="text-[2rem] leading-[1.1] font-serif mb-6 opacity-90">{item.title}</h3>
+                  <p className="text-foreground/65 leading-[1.7] text-[15px] font-light">{item.copy}</p>
+                </article>
+              </Reveal>
+            </div>
           ))}
           </div>
         </div>
       </section>
 
-      <section className="px-6 md:px-20 py-14 md:py-32 border-t border-foreground/10 bg-background relative overflow-hidden">
+      <section className="px-6 md:px-20 py-4 lg:py-32 border-t border-foreground/10 bg-background relative overflow-hidden">
         <div className="absolute inset-0 bg-secondary/30 pointer-events-none" />
         <div className="max-w-[1400px] mx-auto brutal-panel border border-foreground/12 p-10 md:p-14 flex flex-col md:flex-row md:items-center md:justify-between gap-8 relative z-10 bg-background">
           <div className="max-w-2xl">

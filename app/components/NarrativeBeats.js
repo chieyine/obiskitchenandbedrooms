@@ -31,7 +31,7 @@ const beats = [
 
 export default function NarrativeBeats() {
   return (
-    <section className="px-6 md:px-20 py-14 md:py-28">
+    <section className="px-6 md:px-20 py-4 lg:py-28">
       <div className="section-shell">
         <div className="mb-6 md:mb-8">
           <p className="label-upper text-foreground/45 mb-2">What we do</p>

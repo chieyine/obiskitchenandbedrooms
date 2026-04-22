@@ -38,11 +38,11 @@ export default function GlobalNav({ theme = "default", className = "" }) {
     <nav className={`fixed top-0 left-0 w-full px-6 md:px-12 py-7 flex justify-between items-center z-50 transition-colors duration-500 ${navClass} ${className}`}>
       <Link 
         href="/" 
-        className="text-2xl md:text-3xl font-serif tracking-tight focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+        className="text-xl sm:text-2xl lg:text-3xl font-serif tracking-tight focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background shrink-0"
       >
         Obi&apos;s Kitchen &amp; Bedrooms
       </Link>
-      <div className="hidden md:flex gap-10 text-[11px] uppercase tracking-[0.28em] font-sans font-medium">
+      <div className="hidden md:flex gap-5 lg:gap-10 text-[10px] lg:text-[11px] uppercase tracking-[0.2em] lg:tracking-[0.28em] font-sans font-medium">
         <NavLink href="/shop" currentPath={pathname}>Services</NavLink>
         <NavLink href="/advice" currentPath={pathname}>Advice</NavLink>
         <NavLink href="/process" currentPath={pathname}>Our Process</NavLink>

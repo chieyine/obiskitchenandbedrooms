@@ -59,9 +59,9 @@ export default function BeforeAfterSlider() {
   }, []);
 
   return (
-    <section className="py-24 md:py-40 px-6 md:px-20 bg-background" data-cursor-label="Compare" data-cursor-tone="light">
+    <section className="py-6 lg:py-40 px-6 md:px-20 bg-background" data-cursor-label="Compare" data-cursor-tone="light">
       <div className="max-w-[1400px] mx-auto">
-        <Reveal>
+        <Reveal width="100%">
           <div className="mb-12 md:mb-20 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
             <div>
               <p className="label-upper text-foreground/45 mb-3">Transformations</p>
@@ -86,7 +86,7 @@ export default function BeforeAfterSlider() {
           </div>
         </Reveal>
 
-        <Reveal delay={0.1}>
+        <Reveal delay={0.1} width="100%">
           <div
             ref={containerRef}
             className="relative aspect-16/9 md:aspect-21/9 overflow-hidden cursor-col-resize select-none border border-foreground/10"

@@ -20,7 +20,7 @@ export default function ProcessPage() {
       <Testimonials />
       <FAQSection />
 
-      <section className="px-6 md:px-20 py-24 md:py-32 border-t border-foreground/10 bg-background">
+      <section className="px-6 md:px-20 py-6 lg:py-32 border-t border-foreground/10 bg-background">
         <div className="max-w-[1400px] mx-auto brutal-panel border border-foreground/12 p-10 md:p-14 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
           <div className="max-w-2xl">
             <p className="label-upper text-foreground/45 mb-3">Next step</p>

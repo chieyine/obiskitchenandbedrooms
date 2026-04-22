@@ -31,7 +31,7 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="py-16 md:py-40 px-6 md:px-20 bg-background" data-cursor-label="Reviews" data-cursor-tone="accent">
+    <section className="py-4 lg:py-40 px-6 md:px-20 bg-background" data-cursor-label="Reviews" data-cursor-tone="accent">
       <div className="max-w-[1400px] mx-auto">
         <Reveal>
           <div className="mb-10 md:mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8 mt-12">
@@ -47,8 +47,7 @@ export default function Testimonials() {
           </div>
         </Reveal>
 
-        {/* 2x2 Grid instead of cramped horizontal scroll */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {testimonials.map((item, index) => (
             <Reveal key={item.name} delay={index * 0.15} width="100%">
               <article className="brutal-panel p-8 md:p-14 border border-foreground/10 hover:border-foreground/30 transition-all duration-700 h-full flex flex-col justify-between group hover:-translate-y-2">

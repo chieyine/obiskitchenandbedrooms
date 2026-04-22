@@ -55,7 +55,7 @@ export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section className="px-6 md:px-20 py-14 md:py-32 bg-background" data-cursor-label="FAQ" data-cursor-tone="default">
+    <section className="px-6 md:px-20 py-4 lg:py-32 bg-background" data-cursor-label="FAQ" data-cursor-tone="default">
       <Script
         id="json-ld-faq"
         type="application/ld+json"

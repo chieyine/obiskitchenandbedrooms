@@ -175,7 +175,7 @@ export default async function ProductDetailPage({ params }) {
 
       <ProductStorySequence product={product} />
 
-      <section className="px-6 md:px-20 py-20 md:py-28" data-cursor-label="Story" data-cursor-tone="light">
+      <section className="px-6 md:px-20 py-4 lg:py-28" data-cursor-label="Story" data-cursor-tone="light">
         <div className="max-w-[1400px] mx-auto">
           <p className="text-[10px] uppercase tracking-[0.3em] text-foreground/55 mb-8">How we approach it</p>
           <h2 className="text-4xl md:text-6xl leading-[0.9] font-serif brutal-title max-w-4xl mb-6">
@@ -187,7 +187,7 @@ export default async function ProductDetailPage({ params }) {
         </div>
       </section>
 
-      <section className="px-6 md:px-20 py-20 md:py-28" data-cursor-label="Related" data-cursor-tone="default">
+      <section className="px-6 md:px-20 py-4 lg:py-28" data-cursor-label="Related" data-cursor-tone="default">
         <div className="max-w-[1400px] mx-auto">
           <div className="flex justify-between items-end mb-10 md:mb-14">
             <h3 className="text-3xl md:text-5xl font-serif leading-none">More Ideas</h3>

@@ -111,7 +111,7 @@ export default function RoomConfigurator() {
   const result = recommendations[selections.room] || recommendations.other;
 
   return (
-    <section className="py-24 md:py-40 px-6 md:px-20" data-cursor-label="Configure" data-cursor-tone="accent">
+    <section className="py-6 lg:py-40 px-6 md:px-20" data-cursor-label="Configure" data-cursor-tone="accent">
       <div className="max-w-[900px] mx-auto">
         <Reveal>
           <div className="mb-12 md:mb-16 text-center">

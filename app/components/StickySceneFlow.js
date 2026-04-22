@@ -46,14 +46,14 @@ export default function StickySceneFlow() {
   });
 
   return (
-    <section ref={ref} className="relative px-6 md:px-20 py-20 md:py-28" data-cursor-label="Scenes" data-cursor-tone="accent">
+    <section ref={ref} className="relative px-6 md:px-20 py-4 lg:py-28" data-cursor-label="Scenes" data-cursor-tone="accent">
       <div className="section-shell mb-6 md:mb-8">
         <p className="label-upper text-foreground/45 mb-2">How it works</p>
         <h2 className="text-3xl md:text-5xl font-serif brutal-title">Our Process</h2>
       </div>
 
-      <div className="section-shell grid md:grid-cols-[0.85fr_1.15fr] gap-10 md:gap-16">
-        <div className="hidden md:block">
+      <div className="section-shell grid lg:grid-cols-[0.85fr_1.15fr] gap-10 md:gap-16">
+        <div className="hidden lg:block">
           <div className="sticky top-[14vh] h-[72vh] border border-foreground/14 overflow-hidden brutal-panel">
             {scenes.map((scene, index) => (
               <motion.div
@@ -67,7 +67,7 @@ export default function StickySceneFlow() {
                   alt={scene.imageAlt}
                   fill
                   className="object-cover object-center"
-                  sizes="(max-width: 768px) 0vw, 45vw"
+                  sizes="(max-width: 1024px) 0vw, 45vw"
                   quality={88}
                   priority={index === 0}
                 />
@@ -83,11 +83,11 @@ export default function StickySceneFlow() {
 
         <div>
           {scenes.map((scene, index) => (
-            <article key={scene.title} className="min-h-[72vh] md:min-h-[84vh] py-6 md:py-8 border-b border-foreground/12">
+            <article key={scene.title} className="min-h-[50vh] lg:min-h-[84vh] py-6 md:py-8 border-b border-foreground/12">
               <p className="label-upper text-foreground/45 mb-3">{String(index + 1).padStart(2, "0")}</p>
-              <h3 className="text-3xl md:text-5xl font-serif brutal-title mb-4">{scene.title}</h3>
-              <p className="text-foreground/60 leading-[1.6] max-w-lg mb-6 text-[15px]">{scene.copy}</p>
-              <div className="md:hidden h-[42vh] border border-foreground/14 relative overflow-hidden">
+              <h3 className="text-3xl sm:text-4xl lg:text-5xl font-serif brutal-title mb-4">{scene.title}</h3>
+              <p className="text-foreground/60 leading-[1.6] max-w-2xl mb-6 text-[15px]">{scene.copy}</p>
+              <div className="lg:hidden aspect-video border border-foreground/14 relative overflow-hidden">
                 <Image
                   src={scene.image}
                   alt={scene.imageAlt}

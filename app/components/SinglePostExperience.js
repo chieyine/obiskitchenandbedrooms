@@ -62,7 +62,7 @@ export default function SinglePostExperience({ post }) {
         </section>
 
         {/* Article Body */}
-        <section className="relative py-24 md:py-40 px-6 md:px-0 bg-background" ref={contentRef}>
+        <section className="relative py-6 lg:py-40 px-6 md:px-0 bg-background" ref={contentRef}>
           <div className="max-w-[760px] mx-auto w-full flex relative">
             
             {/* Reading Progress Indicator */}

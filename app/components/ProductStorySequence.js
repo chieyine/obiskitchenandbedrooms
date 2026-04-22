@@ -36,7 +36,7 @@ export default function ProductStorySequence({ product }) {
   });
 
   return (
-    <section ref={ref} className="relative px-6 md:px-20 py-20 md:py-28">
+    <section ref={ref} className="relative px-6 md:px-20 py-4 lg:py-28">
       <div className="section-shell grid md:grid-cols-[0.8fr_1.2fr] gap-10 md:gap-16 items-end">
         <div className="space-y-4">
           <p className="label-upper text-foreground/45">Project visuals</p>

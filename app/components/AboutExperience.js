@@ -53,7 +53,7 @@ export default function AboutExperience() {
         </section>
 
         {/* Introduction */}
-        <section className="py-32 md:py-48 px-6 md:px-20">
+        <section className="py-6 lg:py-48 px-6 md:px-20">
           <div className="max-w-[1400px] mx-auto grid md:grid-cols-2 gap-16 md:gap-32 items-center">
             <Reveal>
               <h2 className="text-3xl md:text-5xl font-serif leading-tight">
@@ -122,7 +122,7 @@ export default function AboutExperience() {
         </section>
 
         {/* Manifesto/Values */}
-        <section className="py-32 md:py-48 bg-background text-foreground border-t border-foreground/10">
+        <section className="py-6 lg:py-48 bg-background text-foreground border-t border-foreground/10">
           <div className="max-w-[1400px] mx-auto px-6 md:px-20">
             <Reveal>
               <h2 className="text-[10vw] md:text-[6.5vw] font-serif leading-[0.9] tracking-tighter uppercase mb-24 opacity-90">
@@ -132,19 +132,21 @@ export default function AboutExperience() {
               </h2>
             </Reveal>
 
-            <div className="grid md:grid-cols-3 gap-16 md:gap-24">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-16 md:gap-24">
               {[
                 { num: "01", title: "Skilled local craftsmen", copy: "We take pride in the details—clean lines, solid fittings and a professional finish." },
                 { num: "02", title: "Affordable mid-range pricing", copy: "A great result without the premium price tag. Clear quotes and practical designs." },
                 { num: "03", title: "Reliable, friendly service", copy: "From design to installation, we keep your home respected, tidy and on track." }
               ].map((item, idx) => (
-                <Reveal key={idx} delay={idx * 0.15}>
-                  <div className="border-t border-foreground/15 pt-8 mt-12">
-                    <span className="text-sm font-sans block mb-12 text-foreground/50">{item.num}</span>
-                    <h3 className="text-3xl font-serif mb-6">{item.title}</h3>
-                    <p className="font-sans text-foreground/70 leading-relaxed font-light">{item.copy}</p>
-                  </div>
-                </Reveal>
+                <div key={idx} className={idx === 2 ? "sm:col-span-2 lg:col-span-1" : ""}>
+                  <Reveal delay={idx * 0.15}>
+                    <div className={`border-t border-foreground/15 pt-8 mt-12 h-full ${idx === 2 ? "sm:max-w-[66%] sm:mx-auto lg:max-w-none lg:mx-0" : ""}`}>
+                      <span className="text-sm font-sans block mb-12 text-foreground/50">{item.num}</span>
+                      <h3 className="text-3xl font-serif mb-6">{item.title}</h3>
+                      <p className="font-sans text-foreground/70 leading-relaxed font-light">{item.copy}</p>
+                    </div>
+                  </Reveal>
+                </div>
               ))}
             </div>
           </div>

@@ -62,7 +62,7 @@ export default function HomeHeroSlider({ className = "" }) {
 
     const id = window.setInterval(() => {
       setActive((v) => clampIndex(v + 1, slides.length));
-    }, 6500);
+    }, 4000);
 
     return () => window.clearInterval(id);
   }, [isPaused, prefersReducedMotion, slides.length]);
