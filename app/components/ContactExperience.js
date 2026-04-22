@@ -93,9 +93,9 @@ export default function ContactExperience({
 
   return (
     <SmoothScroll>
-      <div ref={container} className="relative min-h-screen bg-background text-foreground pb-32">
-        <header className="px-6 md:px-20 pt-40 md:pt-48 pb-20">
-          <div className="max-w-[1400px] mx-auto grid md:grid-cols-2 gap-16 md:gap-24 items-start">
+      <div ref={container} className="relative min-h-screen bg-background text-foreground pb-16 md:pb-32">
+        <header className="px-6 md:px-20 pt-28 md:pt-48 pb-12 md:pb-20">
+          <div className="max-w-[1400px] mx-auto grid md:grid-cols-2 gap-10 md:gap-24 items-start">
             <div>
               <Reveal>
                 <h1 className="text-[10vw] md:text-[6.5vw] brutal-title font-serif leading-[0.9] tracking-tighter uppercase mb-8">

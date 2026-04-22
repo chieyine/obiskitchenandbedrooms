@@ -36,8 +36,8 @@ export default function JournalExperience({ posts }) {
 
   return (
     <SmoothScroll>
-      <div ref={container} className="relative pb-32">
-        <header className="px-6 md:px-20 pt-32 pb-20 border-b border-foreground/12">
+      <div ref={container} className="relative pb-16 md:pb-32">
+        <header className="px-6 md:px-20 pt-24 md:pt-32 pb-12 md:pb-20 border-b border-foreground/12">
           <div className="max-w-[1400px] mx-auto">
             <Reveal>
               <h1 className="text-[12vw] md:text-[8vw] brutal-title font-serif uppercase leading-none tracking-tighter">
@@ -46,7 +46,7 @@ export default function JournalExperience({ posts }) {
               </h1>
             </Reveal>
             <Reveal delay={0.2}>
-              <div className="mt-12 md:mt-24 grid gap-6 md:grid-cols-[1fr_auto] md:items-end">
+              <div className="mt-8 md:mt-24 grid gap-6 md:grid-cols-[1fr_auto] md:items-end">
                 <div className="max-w-xl">
                   <p className="text-foreground/60 leading-[1.6] text-[15px] md:text-base font-sans">
                     Practical tips on fitted wardrobes, kitchens, and custom storage—everything you need to know before you build.
@@ -86,9 +86,9 @@ export default function JournalExperience({ posts }) {
           </div>
         </header>
 
-        <section className="px-6 md:px-20 pt-20">
+        <section className="px-6 md:px-20 pt-10 md:pt-20">
           <div className="max-w-[1400px] mx-auto">
-            <div className="flex flex-wrap gap-3 mb-14">
+            <div className="flex flex-wrap gap-3 mb-10 md:mb-14">
               {categories.map((category) => {
                 const isActive = category === activeCategory;
                 return (

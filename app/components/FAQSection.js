@@ -55,13 +55,13 @@ export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section className="px-6 md:px-20 py-24 md:py-32 bg-background" data-cursor-label="FAQ" data-cursor-tone="default">
+    <section className="px-6 md:px-20 py-14 md:py-32 bg-background" data-cursor-label="FAQ" data-cursor-tone="default">
       <Script
         id="json-ld-faq"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
-      <div className="max-w-[1400px] mx-auto grid md:grid-cols-[0.8fr_1.2fr] gap-12 md:gap-20 items-start">
+      <div className="max-w-[1400px] mx-auto grid md:grid-cols-[0.8fr_1.2fr] gap-10 md:gap-20 items-start">
         <Reveal>
           <div>
             <p className="label-upper text-foreground/45 mb-3">Questions</p>

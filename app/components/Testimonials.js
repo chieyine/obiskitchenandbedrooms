@@ -31,10 +31,10 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="py-24 md:py-40 px-6 md:px-20 bg-background" data-cursor-label="Reviews" data-cursor-tone="accent">
+    <section className="py-16 md:py-40 px-6 md:px-20 bg-background" data-cursor-label="Reviews" data-cursor-tone="accent">
       <div className="max-w-[1400px] mx-auto">
         <Reveal>
-          <div className="mb-16 md:mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8 mt-12">
+          <div className="mb-10 md:mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8 mt-12">
             <div>
               <p className="label-upper text-foreground/45 mb-3">Testimonials</p>
               <h2 className="text-4xl md:text-6xl font-serif brutal-title max-w-2xl">

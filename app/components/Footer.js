@@ -3,8 +3,8 @@ import { Instagram, Youtube } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer id="contact" className="py-20 md:py-32 px-6 md:px-20 bg-background" data-cursor-label="Contact" data-cursor-tone="accent">
-      <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-14 md:gap-20 items-start pb-16 md:pb-24 border-b border-foreground/12">
+    <footer id="contact" className="py-14 md:py-32 px-6 md:px-20 bg-background" data-cursor-label="Contact" data-cursor-tone="accent">
+      <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-20 items-start pb-16 md:pb-24 border-b border-foreground/12">
         <div className="space-y-6">
           <h3 className="text-3xl md:text-4xl font-serif tracking-tight text-foreground">Obi&apos;s Kitchen &amp; Bedrooms</h3>
           <p className="text-foreground/60 max-w-xs leading-[1.55] text-[15px]">
@@ -12,7 +12,7 @@ export default function Footer() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 gap-10 md:gap-16">
+        <div className="grid grid-cols-2 gap-8 md:gap-16">
           <div className="space-y-4">
             <p className="label-upper text-foreground/40 font-bold">Navigation</p>
             {[
@@ -43,10 +43,10 @@ export default function Footer() {
           <a href="mailto:obiskitchenandbedrooms@gmail.com" className="block text-[15px] text-foreground/70 hover:text-accent transition-colors">obiskitchenandbedrooms@gmail.com</a>
           <p className="text-[13px] text-foreground/40">obiskitchenbedrooms.co.uk</p>
           <div className="flex md:justify-end gap-5 pt-4">
-            <a href="https://www.instagram.com/samskitchenandbedroom" aria-label="Instagram" target="_blank" rel="noopener noreferrer" className="text-foreground/40 hover:text-foreground hover:scale-110 transition-all duration-300">
+            <a href="https://www.instagram.com/obiskitchenandbedrooms" aria-label="Instagram" target="_blank" rel="noopener noreferrer" className="text-foreground/40 hover:text-foreground hover:scale-110 transition-all duration-300">
               <Instagram size={20} strokeWidth={1.5} />
             </a>
-            <a href="https://www.youtube.com/@sams_kitchen_bedrooms" aria-label="YouTube" target="_blank" rel="noopener noreferrer" className="text-foreground/40 hover:text-foreground hover:scale-110 transition-all duration-300">
+            <a href="https://www.youtube.com/@obiskitchenandbedrooms" aria-label="YouTube" target="_blank" rel="noopener noreferrer" className="text-foreground/40 hover:text-foreground hover:scale-110 transition-all duration-300">
               <Youtube size={20} strokeWidth={1.5} />
             </a>
           </div>

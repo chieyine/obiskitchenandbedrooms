@@ -76,7 +76,7 @@ export default async function Home() {
       </section>
 
       {/* Text + featured products hero band */}
-      <section className="px-6 md:px-20 pt-16 md:pt-24 pb-24 md:pb-32 flex items-end relative" data-cursor-label="Intro" data-cursor-tone="default">
+      <section className="px-6 md:px-20 pt-12 md:pt-24 pb-16 md:pb-32 flex items-end relative" data-cursor-label="Intro" data-cursor-tone="default">
         <div className="max-w-[1400px] w-full mx-auto grid md:grid-cols-[1.4fr_0.6fr] gap-12 md:gap-20 items-end">
           <div>
             <Reveal delay={0.1}>
@@ -94,12 +94,12 @@ export default async function Home() {
               </h1>
             </Reveal>
             <Reveal delay={0.35}>
-              <p className="mt-10 max-w-xl text-foreground/70 leading-[1.7] text-[15px] md:text-[17px] font-sans font-light">
+              <p className="mt-6 md:mt-10 max-w-xl text-foreground/70 leading-[1.7] text-[15px] md:text-[17px] font-sans font-light">
                 Bespoke custom-built wardrobes, fitted bedrooms, media walls and kitchen cabinets—designed around your space, style and budget. From design to installation, we keep it simple, reliable and finished to a professional high standard.
               </p>
             </Reveal>
             <Reveal delay={0.45}>
-              <div className="mt-10 flex flex-wrap items-center gap-4">
+              <div className="mt-8 md:mt-10 flex flex-wrap items-center gap-4">
                 <MagneticButton className="inline-block">
                   <Link href="/start" className="inline-flex items-center gap-3 border border-foreground/20 px-8 py-4 text-[10px] uppercase tracking-[0.3em] hover:bg-accent/20 transition-colors duration-500 font-medium">
                     Get a free quote
@@ -129,7 +129,7 @@ export default async function Home() {
             </Reveal>
 
             <Reveal delay={0.55}>
-              <div className="mt-12 max-w-xl brutal-panel px-6 py-5 border border-foreground/12">
+              <div className="mt-10 md:mt-12 max-w-xl brutal-panel px-6 py-5 border border-foreground/12">
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-[10px] uppercase tracking-[0.22em] text-foreground/65 font-sans font-medium">
                   <span>Free survey</span>
                   <span>Made to measure</span>
@@ -168,10 +168,10 @@ export default async function Home() {
 
       <StickySceneFlow />
 
-      <section id="collection" className="py-24 md:py-48 px-6 md:px-20" data-cursor-label="Collect" data-cursor-tone="accent">
+      <section id="collection" className="py-16 md:py-48 px-6 md:px-20" data-cursor-label="Collect" data-cursor-tone="accent">
         <div className="max-w-[1400px] mx-auto">
           <Reveal>
-            <div className="mb-24 md:mb-40 flex flex-col md:flex-row md:items-end md:justify-between gap-8 md:gap-12">
+            <div className="mb-12 md:mb-40 flex flex-col md:flex-row md:items-end md:justify-between gap-8 md:gap-12">
               <div className="space-y-4">
                 <span className="label-upper text-foreground/75">Featured Work</span>
                 <h2 className="text-[3rem] md:text-[6rem] font-serif max-w-3xl brutal-title opacity-95">Kitchens, Wardrobes & Media Walls</h2>
@@ -183,14 +183,14 @@ export default async function Home() {
           </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
-            <div className="space-y-20 md:space-y-32 md:mt-28">
+            <div className="space-y-12 md:space-y-32 md:mt-28">
               {featuredProducts.slice(0, 2).map((product, idx) => (
                 <Reveal key={product.id} delay={idx * 0.2}>
                   <ProductCard product={product} />
                 </Reveal>
               ))}
             </div>
-            <div className="space-y-24 md:space-y-40">
+            <div className="space-y-12 md:space-y-40">
               {featuredProducts.slice(2, 4).map((product, idx) => (
                 <Reveal key={product.id} delay={idx * 0.2}>
                   <ProductCard product={product} />
@@ -200,7 +200,7 @@ export default async function Home() {
           </div>
 
           <Reveal>
-            <div className="mt-20 md:mt-32 flex justify-center">
+            <div className="mt-12 md:mt-32 flex justify-center">
               <Link href="/shop" className="inline-flex items-center gap-3 border border-foreground/20 px-10 py-5 text-[11px] uppercase tracking-[0.3em] hover:bg-accent/10 transition-colors hover:-translate-y-1 font-medium bg-background">
                 View All Services &amp; Projects
               </Link>
@@ -213,7 +213,7 @@ export default async function Home() {
 
       <Testimonials />
 
-      <section className="px-6 md:px-20 py-32 md:py-56" data-cursor-label="Read" data-cursor-tone="default">
+      <section className="px-6 md:px-20 py-16 md:py-56" data-cursor-label="Read" data-cursor-tone="default">
         <div className="max-w-[1400px] mx-auto">
           <div className="mb-14 md:mb-20">
             <p className="label-upper text-foreground/45 mb-3">Why people choose us</p>
@@ -238,7 +238,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="px-6 md:px-20 py-24 md:py-32 border-t border-foreground/10 bg-background relative overflow-hidden">
+      <section className="px-6 md:px-20 py-14 md:py-32 border-t border-foreground/10 bg-background relative overflow-hidden">
         <div className="absolute inset-0 bg-secondary/30 pointer-events-none" />
         <div className="max-w-[1400px] mx-auto brutal-panel border border-foreground/12 p-10 md:p-14 flex flex-col md:flex-row md:items-center md:justify-between gap-8 relative z-10 bg-background">
           <div className="max-w-2xl">

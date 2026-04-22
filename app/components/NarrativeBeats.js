@@ -31,7 +31,7 @@ const beats = [
 
 export default function NarrativeBeats() {
   return (
-    <section className="px-6 md:px-20 py-20 md:py-28">
+    <section className="px-6 md:px-20 py-14 md:py-28">
       <div className="section-shell">
         <div className="mb-6 md:mb-8">
           <p className="label-upper text-foreground/45 mb-2">What we do</p>
@@ -40,11 +40,11 @@ export default function NarrativeBeats() {
           </h2>
         </div>
 
-        <div className="flex flex-col gap-6 md:gap-8">
+        <div className="flex flex-col gap-4 md:gap-8">
           {beats.map((beat) => (
             <article
               key={beat.id}
-              className="brutal-panel border border-foreground/14 p-8 md:p-14 grid md:grid-cols-[0.7fr_1.3fr] gap-10 md:gap-16 items-center"
+              className="brutal-panel border border-foreground/14 p-6 md:p-14 grid md:grid-cols-[0.7fr_1.3fr] gap-10 md:gap-16 items-center"
             >
               <div className="order-2 md:order-1">
                 <p className="label-upper text-foreground/45 mb-4">{beat.id}</p>

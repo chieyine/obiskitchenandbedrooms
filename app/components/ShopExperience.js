@@ -25,7 +25,7 @@ export default function ShopExperience({ products, categories }) {
   }, [products, query, activeCategory]);
 
   return (
-    <section className="px-6 md:px-20 pt-6 pb-20 md:pb-28">
+    <section className="px-6 md:px-20 pt-6 pb-12 md:pb-28">
       <div className="max-w-[1400px] mx-auto">
         <div className="mb-10 md:mb-14 grid gap-6 md:grid-cols-[1fr_auto] md:items-end">
           <div>
@@ -83,14 +83,14 @@ export default function ShopExperience({ products, categories }) {
           })}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12 md:gap-14">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-14">
           {filteredProducts.map((product) => (
             <ProductCard key={product.id} product={product} compact />
           ))}
         </div>
 
         {filteredProducts.length === 0 ? (
-          <div className="py-24 text-center border border-dashed border-foreground/20 mt-16 brutal-panel">
+          <div className="py-24 text-center border border-dashed border-foreground/20 mt-8 md:mt-16 brutal-panel">
             <p className="text-foreground/60 mb-3">No products match this filter.</p>
             <p className="text-[12px] text-foreground/55 font-sans">
               Try a different category or clear your search.
