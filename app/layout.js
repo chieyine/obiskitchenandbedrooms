@@ -18,7 +18,10 @@ export const viewport = {
 
 export const metadata = {
   metadataBase: new URL("https://obiskitchenbedrooms.co.uk"),
-  title: "Obi's Kitchen & Bedrooms | Fitted Kitchens, Wardrobes & Bedrooms",
+  title: {
+    default: "Obi's Kitchen & Bedrooms | Fitted Kitchens, Wardrobes & Bedrooms",
+    template: "%s | Obi's Kitchen & Bedrooms",
+  },
   description:
     "Obi's Kitchen & Bedrooms design and install fitted kitchens, wall media units, wardrobes and bedroom furniture across Hertfordshire and the UK. Free consultation and quote.",
   openGraph: {

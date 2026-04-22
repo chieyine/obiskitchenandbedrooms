@@ -31,7 +31,7 @@ export default function GlobalNav({ theme = "default", className = "" }) {
   const navClass = mobileMenuOpen
     ? "text-foreground bg-background" 
     : isTransparent 
-      ? "text-foreground bg-background" 
+      ? "text-foreground bg-transparent" 
       : "text-foreground border-b border-foreground/10 bg-background/90 backdrop-blur-xl";
 
   return (

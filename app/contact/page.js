@@ -2,7 +2,7 @@ import ContactExperience from "../components/ContactExperience";
 import GlobalNav from "../components/GlobalNav";
 
 export const metadata = {
-  title: "Contact | Obi's Kitchen & Bedrooms",
+  title: "Contact",
   description:
     "Contact Obi's Kitchen & Bedrooms for fitted wardrobes, bedrooms, kitchens, media walls and custom storage. Free consultation and quote across Hertfordshire and the UK.",
   alternates: { canonical: "/contact" },

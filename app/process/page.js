@@ -5,7 +5,7 @@ import Testimonials from "../components/Testimonials";
 import GlobalNav from "../components/GlobalNav";
 
 export const metadata = {
-  title: "Our Process | Obi's Kitchen & Bedrooms",
+  title: "Our Process",
   description: "How we work: free consultation, design & quote, manufacture and installation, final check. Serving Hertfordshire and the UK.",
   alternates: { canonical: "/process" },
 };

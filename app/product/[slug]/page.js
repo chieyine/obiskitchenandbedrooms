@@ -25,14 +25,14 @@ export async function generateMetadata({ params }) {
   const url = `https://obiskitchenbedrooms.co.uk/product/${product.slug}`;
 
   return {
-    title: `${product.title} | Obi's Kitchen & Bedrooms`,
+    title: product.title,
     description: product.description,
     alternates: {
       canonical: url,
     },
     openGraph: image
       ? {
-          title: `${product.title} | Obi's Kitchen & Bedrooms`,
+          title: product.title,
           description: product.description,
           url,
           images: [{ url: image }],

@@ -3,7 +3,7 @@ import ShopExperience from "../components/ShopExperience";
 import GlobalNav from "../components/GlobalNav";
 
 export const metadata = {
-  title: "Shop & Our Work | Obi's Kitchen & Bedrooms",
+  title: "Shop & Our Work",
   description: "Browse fitted wardrobes, bedroom furniture, kitchen cabinets, wall media units and custom storage from Obi's Kitchen & Bedrooms.",
   alternates: { canonical: "/shop" },
 };

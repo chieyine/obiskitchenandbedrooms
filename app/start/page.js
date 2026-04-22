@@ -2,7 +2,7 @@ import GlobalNav from '../components/GlobalNav';
 import RoomConfigurator from '../components/RoomConfigurator';
 
 export const metadata = {
-  title: "Get a Free Quote | Fitted Kitchens & Wardrobes | Obi's Kitchen & Bedrooms",
+  title: "Get a Free Quote | Fitted Kitchens & Wardrobes",
   description: "Find the right fitted kitchen, wardrobe, bedroom or wall media solution for your space with our interactive configurator.",
   alternates: { canonical: "/start" },
 };

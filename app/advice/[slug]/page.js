@@ -20,13 +20,13 @@ export async function generateMetadata({ params }) {
   const url = `https://obiskitchenbedrooms.co.uk/advice/${post.slug}`;
 
   return {
-    title: `${post.title} | Obi's Kitchen & Bedrooms`,
+    title: post.title,
     description: post.excerpt,
     alternates: {
       canonical: url,
     },
     openGraph: {
-      title: `${post.title} | Obi's Kitchen & Bedrooms`,
+      title: post.title,
       description: post.excerpt,
       url,
       images: image ? [{ url: image }] : [],

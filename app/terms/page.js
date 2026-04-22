@@ -1,7 +1,7 @@
 import GlobalNav from "../components/GlobalNav";
 
 export const metadata = {
-  title: "Terms of Service | Obi's Kitchen & Bedrooms",
+  title: "Terms of Service",
   description: "Terms and conditions of service for Obi's Kitchen & Bedrooms bespoke fitted furniture projects.",
   alternates: { canonical: "/terms" },
 };
@@ -61,7 +61,7 @@ export default function TermsOfService() {
             <h2 className="text-2xl font-serif mb-4 text-foreground/95">5. Warranty</h2>
             <p>
               We guarantee the quality of our craftsmanship and the structural integrity of our fitted furniture with a 2-year workmanship guarantee. 
-              Hardware (such as hinges and runners) is typically covered by a manufacturer's warranty of up to 5 years. 
+              Hardware (such as hinges and runners) is typically covered by a manufacturer&apos;s warranty of up to 5 years. 
               This warranty does not cover general wear and tear, accidental damage, or misuse.
             </p>
           </div>
